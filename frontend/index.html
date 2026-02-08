@@ -1,18 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
   <title>OmniSync Dashboard</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <h1>OmniSync Dashboard</h1>
+  <p class="tagline">Predictive • Private • Productive</p>
 
-  <button onclick="loadFridge()">Fridge Ninja</button>
-  <button onclick="loadEnergy()">Energy Exorcist</button>
-  <button onclick="loadCommute()">Commute Whisperer</button>
+  <div class="buttons">
+    <button onclick="loadFridge()">🥗 Fridge Ninja</button>
+    <button onclick="loadEnergy()">⚡ Energy Exorcist</button>
+    <button onclick="loadCommute()">🚗 Commute Whisperer</button>
+  </div>
 
-  <pre id="output"></pre>
+  <div id="cards" class="cards"></div>
+
+  <footer>
+    Built for Hackathons • OmniSync © 2026
+  </footer>
 
   <script src="script.js"></script>
 </body>
 </html>
+
