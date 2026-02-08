@@ -18,7 +18,7 @@ def root():
 def fridge():
     return {
         "eat_first": ["Milk (2 days)", "Tomatoes (1 day)"],
-        "items": ["Cheese", "Eggs", "Butter"]
+        "items": [ "Tomatoes", "Milk" , "Cheese", "Eggs", "Butter"]
     }
 
 @app.get("/energy")
@@ -36,3 +36,4 @@ def commute():
         "alert": "Charge vehicle tonight",
         "best_route": "Low traffic detected"
     }
+
