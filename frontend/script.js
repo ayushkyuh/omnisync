@@ -1,4 +1,4 @@
-const API = "https://omnisync-backend.onrender.com";
+const API = "https://omnisync-1-il7e.onrender.com";
 
 document.addEventListener("DOMContentLoaded", () => {
   const cards = document.getElementById("cards");
@@ -65,6 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .catch(() => alert("Backend not reachable"));
   });
 });
+
 
 
 
