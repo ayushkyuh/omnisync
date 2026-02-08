@@ -1,4 +1,4 @@
-const API = "https://your-backend.onrender.com";
+const API = "https://omnisync-7kgy.onrender.com";
 
 function loadFridge() {
   fetch(API + "/fridge")
@@ -26,3 +26,4 @@ function loadCommute() {
         JSON.stringify(data, null, 2);
     });
 }
+
