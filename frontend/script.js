@@ -3,6 +3,10 @@ const API = "https://omnisync-backend.onrender.com";
 document.addEventListener("DOMContentLoaded", () => {
   const cards = document.getElementById("cards");
 
+  const fridgeBtn = document.getElementById("fridgeBtn");
+  const energyBtn = document.getElementById("energyBtn");
+  const commuteBtn = document.getElementById("commuteBtn");
+
   function clearCards() {
     cards.innerHTML = "";
   }
@@ -14,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     cards.appendChild(div);
   }
 
-  window.loadFridge = function () {
+  fridgeBtn.addEventListener("click", () => {
     clearCards();
     fetch(API + "/fridge")
       .then(res => res.json())
@@ -27,10 +31,11 @@ document.addEventListener("DOMContentLoaded", () => {
           "🧊 Items in Fridge",
           `<ul>${data.items.map(i => `<li>${i}</li>`).join("")}</ul>`
         );
-      });
-  };
+      })
+      .catch(() => alert("Backend not reachable"));
+  });
 
-  window.loadEnergy = function () {
+  energyBtn.addEventListener("click", () => {
     clearCards();
     fetch(API + "/energy")
       .then(res => res.json())
@@ -44,10 +49,11 @@ document.addEventListener("DOMContentLoaded", () => {
           `<p><strong>${data.monthly_savings}</strong></p>
            <p>Energy Reduced: ${data.energy_reduction}</p>`
         );
-      });
-  };
+      })
+      .catch(() => alert("Backend not reachable"));
+  });
 
-  window.loadCommute = function () {
+  commuteBtn.addEventListener("click", () => {
     clearCards();
     fetch(API + "/commute")
       .then(res => res.json())
@@ -55,8 +61,9 @@ document.addEventListener("DOMContentLoaded", () => {
         createCard("⏰ Best Leave Time", `<p>${data.leave_time}</p>`);
         createCard("🔋 Alert", `<p>${data.alert}</p>`);
         createCard("🛣 Route Status", `<p>${data.best_route}</p>`);
-      });
-  };
+      })
+      .catch(() => alert("Backend not reachable"));
+  });
 });
 
 
